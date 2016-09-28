@@ -11,13 +11,11 @@
 
       <div class="intro-phrase">Add a Movie to the List:</div>
 
-
-      <form action="#" ng-submit="addMovie()">
-        <input type="text" ng-model="newMovie.title" placeholder="Title" class="movie-input"><br>
-        <input type="text" ng-model="newMovie.year" placeholder="Year" class="movie-input"><br>
-        <br>
-        <input type="submit" value="Submit">
-      </form>
+    <form ng-submit="addToList()">
+    <input type="text" ng-model="newMovie.title" placeholder="Title" class="movie-input">
+    <input type="text" ng-model="newMovie.year" placeholder="Year" class="movie-input">
+    <input type="submit" value="Add New">
+    </form>
 
       {{newMovie}}
 
