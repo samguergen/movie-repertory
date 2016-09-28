@@ -8,15 +8,6 @@ angular
         this.films = films;
         return this.films;
       }
-/*
-      this.compare = function(a,b) {
-        if (a[this.sortBy] < b[this.sortBy])
-          return -1;
-        if (a[this.sortBy] > b[this.sortBy])
-          return 1;
-        return 0;
-      }
-      */
 
       //inspired by the Fisher-Yates algorithm
       this.shuffle = function(arr) {
@@ -53,13 +44,9 @@ angular
     })
 
     .controller('MovieCtrl', ['$scope', '$location', '$http', '$window', 'SortService', function($scope, $location, $http, $window, SortService){
-      console.log('init main ng controller');
 
       $http.get('movies.json').then(function(data) {
-
-        $scope.movies = data.data
-        $scope.moviez = SortService.movies($scope.movies);
-        console.log('mvz are ', $scope.moviez)
+        $scope.moviez = SortService.movies(data.data);
 
       }, function(error) {
         console.log("The movie list could not be loaded. Error Details: ", error);
@@ -74,42 +61,6 @@ angular
       $scope.addToList = function(){
         $scope.movies.push($scope.newMovie);
         $scope.newMovie = {};
-      }
-
-      $scope.sortMovies = function(sortBy){
-        if (sortBy && $scope.reverted) {
-          $scope.sortBy = sortBy;
-          $scope.movies.sort($scope.compare);
-        }
-        else if (sortBy && !$scope.reverted) {
-          $scope.sortBy = sortBy;
-          $scope.movies.reverse();
-        }
-        else {
-          $scope.shuffle($scope.movies)
-        }
-      }
-
-      $scope.compare = function(a,b) {
-        if (a[$scope.sortBy] < b[$scope.sortBy])
-          return -1;
-        if (a[$scope.sortBy] > b[$scope.sortBy])
-          return 1;
-        return 0;
-      }
-
-      //Fisher-Yates shuffle
-      $scope.shuffle = function(arr) {
-          let count = arr.length;
-          while (count > 0) {
-              let idx = Math.floor(Math.random() * count);
-              count--;
-              let temp = arr[count];
-              arr[count] = arr[idx];
-              arr[idx] = temp;
-          }
-
-          return arr;
       }
 
 }])
