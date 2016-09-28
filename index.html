@@ -6,9 +6,33 @@
 
   </head>
 
-  <body ng-app="myApp" ng-controller="MainCtrl">
+  <body ng-app="movieApp" ng-controller="MovieCtrl">
+    <div id="main-container">
+
+      <div class="intro-phrase">Add a Movie to the List:</div>
 
 
+      <form action="#" ng-submit="addMovie()">
+        <input type="text" ng-model="newMovie.title" placeholder="Title" class="movie-input"><br>
+        <input type="text" ng-model="newMovie.year" placeholder="Year" class="movie-input"><br>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+
+      {{newMovie}}
+
+      <table id="movies-table">
+        <caption>Movies List!</caption>
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+        </tr>
+        <tr ng-repeat="movie in movies">
+          <td> {{ movie.title }}</td>
+          <td> {{ movie.year }}</td>
+        </tr>
+      </table>
+    </div>
 
     <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
     <script src="app.js" type="text/javascript"></script>
