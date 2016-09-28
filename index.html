@@ -17,15 +17,25 @@
     <input type="submit" value="Add New">
     </form>
 
-      {{newMovie}}
+      <input type="submit" value="Year" ng-click="reverted = !reverted; sortList('year')">
+      <input type="submit" value="Title" ng-click="reverted = !reverted; sortList('title')">
+      <input type="submit" value="Random" ng-click="reverted = !reverted; sortList()">
 
-      <table id="movies-table">
+      Sort by: <br>
+      <input type="submit" value="Year" ng-click="reverted = !reverted; sortMovies('year')">
+      <input type="submit" value="Title" ng-click="reverted = !reverted; sortMovies('title')">
+      <input type="submit" value="Random" ng-click="reverted = !reverted; sortMovies()">
+
+
+  <br/>
+
+      <table id="movies-table" class="table table-striped table-responsive">
         <caption>Movies List!</caption>
         <tr>
           <th>Year</th>
           <th>Title</th>
         </tr>
-        <tr ng-repeat="movie in movies">
+        <tr ng-repeat="movie in moviez">
           <td> {{ movie.title }}</td>
           <td> {{ movie.year }}</td>
         </tr>
