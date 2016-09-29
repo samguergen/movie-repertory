@@ -1,8 +1,8 @@
 angular.module('movieApp')
     .service('SortService', function() {
 
+      //data from JSON is accessible through service
       this.movies = function(films){
-        console.log('films are ', films);
         this.films = films;
         return this.films;
       }
@@ -20,7 +20,9 @@ angular.module('movieApp')
           return arr;
       }
 
+      // sorts movie list by toggling ASC and DESC orders.
       this.sortList = function(sortBy, reverted){
+        //sorts initial order in ASC by year or title, passed as user-selected sortBY param to optimize the function
         if (sortBy && reverted) {
           this.films.sort(function(a,b) {
             if (a[sortBy] < b[sortBy])
@@ -30,11 +32,12 @@ angular.module('movieApp')
             return 0;
           })
         }
+        //check if list has already been sorted so that reverse() method can simply be used
         else if (sortBy && !reverted) {
           this.films.reverse();
         }
         else {
-          this.shuffle(this.films)
+          this.shuffle(this.films); //if user selects shuffle btn, then no param passed and send to shuffle function
         }
 
         return this.films;
