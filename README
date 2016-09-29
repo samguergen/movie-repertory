@@ -1,0 +1,9 @@
+Welcome to my Movie List App!
+
+Set up instructions:
+
+-open Terminal path from MovieList directory and run your favorite local server.
+
+-I recommend using http-server. If you do not have it, run 'npm install http-server', then run 'http-server' from terminal
+
+-Add your movies!
