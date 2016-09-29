@@ -2,32 +2,31 @@
   <head>
     <title>Movies List</title>
     <link rel="stylesheet" href="node_modules/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/app.css" type="text/css">
-
+    <link rel="stylesheet" href="css/index.css" type="text/css">
   </head>
 
   <body ng-app="movieApp" ng-controller="MovieCtrl">
+
     <div id="main-container">
 
       <div class="intro-phrase">Add Your Movie</div>
 
+      <form id="movie-form" ng-submit="addToList()">
+        <input type="text" ng-model="newMovie.title" placeholder="Title" class="movie-input">
+        <br>
+        <input type="text" ng-model="newMovie.year" placeholder="Year" class="movie-input">
+        <br>
+        <input type="submit" class="btn-success movie-btn" value="Add New">
+      </form>
 
-    <form id="movie-form" ng-submit="addToList()">
-    <input type="text" ng-model="newMovie.title" placeholder="Title" class="movie-input">
-    <br>
-    <input type="text" ng-model="newMovie.year" placeholder="Year" class="movie-input">
-    <br>
-    <input type="submit" class="btn-success movie-btn" value="Add New">
-    </form>
+      <div class="sort-btns">
+        Sort by:
+        <input type="submit" class="btn-success" value="Year" ng-click="reverted = !reverted; sortList('year')">
+        <input type="submit" class="btn-success" value="Title" ng-click="reverted = !reverted; sortList('title')">
+        <input type="submit" class="btn-success" value="Random" ng-click="reverted = !reverted; sortList()">
+      </div>
 
-    <div class="sort-btns">
-      Sort by:
-      <input type="submit" class="btn-success" value="Year" ng-click="reverted = !reverted; sortList('year')">
-      <input type="submit" class="btn-success" value="Title" ng-click="reverted = !reverted; sortList('title')">
-      <input type="submit" class="btn-success" value="Random" ng-click="reverted = !reverted; sortList()">
-    </div>
-
-  <br/>
+      <br/>
 
       <table id="movies-table" class="table table-responsive">
         <tr>
@@ -47,4 +46,5 @@
     <script src="js/sortService.js" type="text/javascript"></script>
     <script src="js/movieCtrl.js" type="text/javascript"></script>
   </body>
+
 </html>

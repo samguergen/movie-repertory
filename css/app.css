@@ -1,70 +1,51 @@
 body {
-  background-image: url('../img/movie-bg.jpg');
+  background-image: url("../img/movie-bg.jpg");
   background-repeat: no-repeat;
-    background-size: 100%;
-}
+  background-size: 100%; }
 
 #main-container {
-  overflow-x:auto;
+  overflow-x: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   width: 80%;
   padding: 40px;
   margin-top: 30px;
   border: 1px solid white;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
+  #main-container .intro-phrase {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 28px;
+    font-family: Fantasy; }
+  #main-container #movie-form {
+    margin-right: auto;
+    margin-left: auto; }
+    #main-container #movie-form .movie-input {
+      width: 200px;
+      width: 200px;
+      padding: 5px;
+      border-radius: 3px;
+      margin: 5px; }
+  #main-container .btn-success {
+    margin-top: 10px;
+    margin-left: 5px;
+    background: #31708f;
+    border-radius: 5px; }
+  #main-container .sort-btns {
+    margin-left: 70%; }
+  #main-container table {
+    width: 90%;
+    font-size: 15px;
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto; }
+    #main-container table th {
+      font-size: 18px;
+      font-weight: bold; }
 
-.intro-phrase {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 10px;
-  font-size: 28px;
-  font-family: Fantasy;
-}
-
-#movie-form {
-  margin-right: auto;
-  margin-left: auto;
-  padding: 10px;
-}
-
-.movie-input {
-  width: 200px;
-  width: 200px;
-  padding: 5px;
-  border-radius: 3px;
-  margin: 5px;
-}
-
-.btn-success {
-  margin-top: 10px;
-  margin-left: 5px;
-  background: #31708f;
-  border-radius: 5px;
-}
-
-.movie-btn {
-
-}
-
-.sort-btns {
-  margin-left: 70%;
-}
-
-table {
-  width:90%;
-  font-size: 15px;
-  width: 85%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-th {
-  font-size: 18px;
-  font-weight: bold;
-}
+/*# sourceMappingURL=app.css.map */
