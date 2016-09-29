@@ -1,0 +1,36 @@
+body {
+  background-image: url('img/movie-bg.jpg');
+}
+
+#main-container {
+  overflow-x:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: e2e2e2;
+  opacity: 0.5;
+  width: 95%;
+  margin-top: 20px;
+}
+
+.intro-phrase {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#movie-form {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.movie-input {
+  width: 200px;
+}
+
+.sort-btns {
+  margin-left: 80%;
+}
+
+table {
+  width:90%;
+}
